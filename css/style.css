@@ -1,0 +1,426 @@
+/* ---------------------------------
+   1. Base / Reset
+---------------------------------- */
+
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+/* ---------------------------------
+   2. Typography (text styles)
+---------------------------------- */
+
+/* Headings & titles */
+.head-section h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    padding-left: 0.1em;
+}
+
+.new-journey h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.new-journey-2 h2 {
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+.new-journey-2 h3 {
+    font-size: 1.8rem;
+}
+
+.aboutme-h2 {
+    font-size: 2.7rem;
+    margin-bottom: 0;
+}
+
+.aboutme-h3 {
+    padding-top: 2em;
+}
+
+/* Blog & hero text */
+.date {
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.new-journey-p {
+    font-weight: 350;
+    margin-top: 0;
+    padding-top: 0.5em;
+    font-size: 1.7rem;
+}
+
+/* Note: this overrides new-journey-p’s font-size above */
+.blog-p,
+.new-journey-p {
+    font-size: 1.2rem;
+}
+
+.blog-p {
+    color: #505050;
+    font-weight: 380;
+    margin-top: 0;
+}
+
+.blog h2 {
+    font-size: 1.9rem;
+    font-weight: 650;
+    margin: 0;
+}
+
+.blog-date {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Section titles & footer copy */
+.recent-posts,
+#view-more {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer h3 {
+    color: #ECECEC;
+    font-size: 0.9rem;
+}
+
+footer p {
+    color: #D7D7D7;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+footer h3,
+footer p {
+    margin: 0;
+}
+
+/* Nav links & hero links */
+nav a {
+    text-decoration: none;
+    color: #090909;
+}
+
+.new-journey a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ---------------------------------
+   3. Layout & Structure
+---------------------------------- */
+
+/* Header layout */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head-section {
+    display: flex;
+    flex-direction: row;
+    padding: 1.2em;
+}
+
+/* Nav layout */
+nav {
+    display: flex;
+}
+
+.header-links,
+nav {
+    gap: 2.5em;
+    align-items: center;
+}
+
+/* Hero / main sections */
+.new-journey,
+.new-journey-2 {
+    padding: 5em 1.5em 1em 1.5em;
+}
+
+.new-journey {
+    background-image: url("../images/article-image-hero.png");
+    background-size: cover;
+    color: #FFFFFF;
+    /* padding repeated here but same as combined rule above */
+}
+
+.new-journey-2 {
+    /* overrides combined padding above */
+    padding: 1em 1.5em 1em 1.5em;
+}
+
+/* Blog cards */
+.blog {
+    padding: 2.5em 1.5em 0.1em;
+    margin: 0 auto;
+}
+
+/* Images */
+.blog-img {
+    margin-top: 0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Footer layout */
+footer {
+    background-color: #202020;
+    text-align: center;
+    padding: 2.6em 0em;
+}
+
+/* ---------------------------------
+   4. Navigation menu (hamburger / links)
+---------------------------------- */
+
+/* Slide-in menu container */
+.header-links {
+    display: flex;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding: 1em 1em;
+    transform: translateX(100em); /* visually off-screen to the right */
+    transition: transform 0.2s ease;
+}
+
+.header-links.open {
+    transform: translateX(0);
+}
+
+/* ---------------------------------
+   5. Buttons & Interactive States
+---------------------------------- */
+
+/* Shared button base styles */
+nav button,
+#view-more button {
+    border: none;
+    background-color: white;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* View more button specifics */
+#view-more button {
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: underline;
+    padding-bottom: 2.5em;
+}
+
+/* Nav (hamburger) button specifics */
+nav button {
+    font-size: 2.3rem;
+    padding-right: 0.3em;
+}
+
+/* Hover states */
+nav button:hover {
+    background-color: gray;
+}
+
+#view-more button:hover {
+    color: darkblue;
+}
+
+a:hover,
+.new-journey a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ---------------------------------
+   6. Media Query (Desktop: ≥ 600px)
+---------------------------------- */
+
+@media (min-width: 600px) {
+
+    /* Hide hamburger on desktop  */
+    #humburger-btn {
+        display: none;
+    }
+
+    .header-links{
+        transform: translateX(0);
+    }
+
+    /* Desktop header links (inline) */
+    .header-links {
+        padding: 2em;
+        display: flex;
+        gap: 2.5em;
+    }
+
+    /* Larger view-more button text */
+    #view-more button {
+        font-size: 1.25rem;
+    }
+
+    /* Logo & header text sizing */
+    .logo {
+        width: 2.5rem;
+    }
+
+    .head-section h1 {
+        font-size: 1.7rem;
+    }
+
+    .head-section {
+        padding-left: 4.5em;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    header {
+        padding-right: 3em;
+    }
+
+    /* Hero layout adjustments */
+    .new-journey {
+        padding: 25em 5em 5em 4em;
+    }
+
+    .new-journey-text {
+        width: 70%;
+        margin: 0;
+    }
+
+    .date,
+    .new-journey-p {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    section {
+        padding: 2em;
+    }
+
+    /* Blog grid layout */
+    .blog {
+        width: 93%;
+        padding: 2.5em 1.5em 6em;
+    }
+
+    .all-blogs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* New journey page layout */
+    .new-journey-body {
+        background-color: #FAFAFA;
+    }
+
+    .new-journey-main-blog {
+        width: 80%;
+        margin: 0 auto;
+        padding: 4.5em 0em 2.5em;
+    }
+
+    .new-journey-main-blog h2 {
+        font-size: 2.5rem;
+        margin: 0;
+        padding: 0.6em 0em;
+    }
+
+    
+
+    .new-journey-main-blog h3 {
+        font-size: 1.9rem;
+        margin: 0;
+    }
+
+    .new-journey-main-blog-1st {
+        padding: 2em 0em;
+    }
+
+    .blog-img {
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        object-position: center top;
+        height: 70%;
+    }
+
+    .new-journey-main-blog p {
+        padding: 0.8em 0em;
+        font-size: 1.5rem;
+    }
+
+    .recent-posts {
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    footer h3 {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    /* About me page layout */
+    .aboutme-profile {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: center;
+        gap: 2.5em;
+        /* padding-left: 2em; */
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aboutme-pic {
+        width: 20%;
+        margin-left: 0;
+    }
+
+    .aboutme-profile-text {
+        width: 75%;
+    }
+
+    #aboutme-h2 {
+        font-size: 3rem;
+        margin-bottom: 0;
+        padding-bottom: 0.2em;
+    }
+
+    .aboutme-profile-text-p {
+        font-size: 1.4rem;
+    }
+
+    .aboutme-context {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .aboutme-context p {
+        font-size: 1.4rem;
+    }
+
+    .aboutme-context h3 {
+        margin-bottom: 0;
+        padding-bottom: 0.3em;
+    }
+}
