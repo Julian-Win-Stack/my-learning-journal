@@ -32,6 +32,7 @@ document.addEventListener('click',function(e){
                         <p class="blog-p">After several months of learning in the Frontend Developer Career Path, I've made the big jump over to the Bootcamp to get expert code reviews of my Solo Projects projects and meet like-minded peers.</p>
                     </a>
                 </article> `
+            document.getElementById('view-more-btn').style.display = 'none'
   } else if (e.target.dataset.btn === 'humburger'){
     humburger.classList.toggle('open')
   }     

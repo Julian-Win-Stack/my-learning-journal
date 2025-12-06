@@ -7,6 +7,7 @@ body {
     margin: 0 auto;
     padding: 0;
     font-family: "Source Sans 3", sans-serif;
+    max-width: 1000px;
 }
 
 /* ---------------------------------
@@ -41,7 +42,7 @@ body {
 }
 
 .aboutme-h3 {
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 /* Blog & hero text */
@@ -115,6 +116,11 @@ nav a {
     text-decoration: none;
 }
 
+.new-journey a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* ---------------------------------
    3. Layout & Structure
 ---------------------------------- */
@@ -170,9 +176,14 @@ nav {
 
 /* Images */
 .blog-img {
-    margin-top: 0;
+    margin: 0 auto;
+    /* display: block; */
     border-radius: 5px;
     width: 100%;
+    /* aspect-ratio: 1/1; */
+    /* object-fit: cover;
+    object-position: center top; */
+
 }
 
 /* Footer layout */
@@ -239,7 +250,26 @@ nav button:hover {
 a:hover,
 .new-journey a:hover {
     cursor: pointer;
+}
+
+.new-journey a:hover{
     text-decoration: underline;
+}
+
+/* Focus state */
+/* :focus{
+    outline: none;
+} */
+
+:focus-visible{
+    outline: 2px solid #005fcc;
+    /* outline: 2px solid white; */
+    outline-offset: 3px;
+}
+
+.new-journey a:focus-visible{
+      outline: 10px solid #00ff00;
+    outline-offset: 10px;
 }
 
 /* ---------------------------------
@@ -259,7 +289,7 @@ a:hover,
 
     /* Desktop header links (inline) */
     .header-links {
-        padding: 2em;
+        padding: 1.5em;
         display: flex;
         gap: 2.5em;
     }
@@ -275,7 +305,7 @@ a:hover,
     }
 
     .head-section h1 {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
     }
 
     .head-section {
@@ -283,7 +313,7 @@ a:hover,
     }
 
     nav a {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: 500;
     }
 
@@ -314,7 +344,7 @@ a:hover,
     /* Blog grid layout */
     .blog {
         width: 93%;
-        padding: 2.5em 1.5em 6em;
+        padding: 2.5em 1.5em;
     }
 
     .all-blogs {
@@ -330,7 +360,7 @@ a:hover,
     .new-journey-main-blog {
         width: 80%;
         margin: 0 auto;
-        padding: 4.5em 0em 2.5em;
+        padding: 2.5em 0em 2.5em;
     }
 
     .new-journey-main-blog h2 {
@@ -356,7 +386,7 @@ a:hover,
         margin: 0 auto;
         object-fit: cover;
         object-position: center top;
-        height: 70%;
+        
     }
 
     .new-journey-main-blog p {
@@ -422,5 +452,9 @@ a:hover,
     .aboutme-context h3 {
         margin-bottom: 0;
         padding-bottom: 0.3em;
+    }
+
+    html{
+        font-size: 14px;
     }
 }
